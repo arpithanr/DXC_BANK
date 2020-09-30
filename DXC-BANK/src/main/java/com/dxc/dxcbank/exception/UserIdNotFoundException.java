@@ -1,0 +1,15 @@
+package com.dxc.dxcbank.exception;
+
+import org.springframework.http.HttpStatus;
+import org.springframework.web.bind.annotation.ResponseStatus;
+
+@ResponseStatus(value = HttpStatus.NOT_FOUND)
+public class UserIdNotFoundException extends RuntimeException {
+
+    private static final long serialVersionUID = 1L;
+
+    public UserIdNotFoundException(int userId) {
+	super("User with ID: " + userId + " Not Found");
+    }
+
+}
